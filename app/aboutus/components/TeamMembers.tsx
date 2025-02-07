@@ -19,7 +19,7 @@ const TeamMembers: React.FC = () => {
       <h1 className="text-center md:text-left text-3xl md:text-[2.5rem] font-medium font-cocon">
         Meet The <span className="text-dark-orange">Dream</span> Team!
       </h1>
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row gap-6 ">
         {/* Left side - Active Image */}
         <div className="h-full w-full md:w-[45%]">
           <Image
@@ -27,7 +27,7 @@ const TeamMembers: React.FC = () => {
             alt={activeMember.name}
             width={500} 
             height={400} 
-            className="h-auto object-cover rounded-[1.25rem]"
+            className="h-auto object-cover mx-auto lg:mx-0 rounded-[1.25rem]"
           />
         </div>
 
@@ -45,14 +45,14 @@ const TeamMembers: React.FC = () => {
               onMouseEnter={() => handleHover(member)}
             >
               <div
-                className={`text-[1.75rem] md:text-2xl lg:text-3xl xl:text-[2.5rem] font-medium font-cocon w-1/3 ${
+                className={`text-[1.4rem] md:text-2xl lg:text-3xl xl:text-[2.5rem] font-medium font-cocon w-1/3 ${
                   activeMember.id === member.id ? "" : "text-dark-green"
                 }`}
               >
                 {member.name}
               </div>
               <div
-                className={`text-xl md:text-[1.25rem] lg:text-2xl xl:text-3xl w-1/3 flex justify-center  ${
+                className={`text-md md:text-[1.25rem] lg:text-2xl xl:text-3xl w-1/3 flex justify-center  ${
                   activeMember.id === member.id ? "" : "text-dark-green"
                 }`}
               >

@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
     <>
       <div className="w-full bg-white lg:px-[3em] xl:px-[8em] px-4 py-6 flex justify-between gap-6 lg:py-12">
         <Link href="/">
-          <Image src={LogoMain} alt="Logo" />
+          <Image src={LogoMain} alt="Logo" className="h-8 lg:h-auto mt-2"/>
         </Link>
 
         {/* Desktop menu */}

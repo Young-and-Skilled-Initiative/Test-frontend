@@ -26,13 +26,25 @@ export const MovementHero = () => {
           of opportunities!
         </p>
       </div>
-      <form className="flex flex-col sm:flex-row gap-[1em] w-full ">
+
+      <form className="flex flex-col md gap-[1em] w-full ">
+        <div className="flex flex-col gap-4 md:flex-row items-center w-full">
         <input
           type="text"
-          className="bg-white px-[1.5em] sm:px-[2em] py-[1em] text-xs sm:text-base border border-gray-300 rounded-full placeholder:text-xs sm:placeholder:text-base placeholder:font-manrope placeholder:leading-8 w-full sm:w-[30em] focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-700"
+          className="bg-white px-[1.5em] sm:px-[2em] py-[1em] text-xs sm:text-base border border-gray-300 rounded-full placeholder:text-xs sm:placeholder:text-base placeholder:font-manrope placeholder:leading-8 md:w-full sm:w-[30em] w-full focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-700"
+          placeholder="FullName"
+          required
+        />
+
+        <input
+          type="text"
+          className="bg-white px-[1.5em] sm:px-[2em] py-[1em] text-xs sm:text-base border border-gray-300 rounded-full placeholder:text-xs sm:placeholder:text-base placeholder:font-manrope placeholder:leading-8 md:w-full sm:w-[30em] w-full focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-green-700"
           placeholder="Enter your Email"
           required
         />
+
+        </div>
+
         <button
           type="submit"
           className="bg-black py-[1em] px-[2.5em] text-white text-manrope text-sm sm:text-lg font-bold rounded-full hover:bg-black/80 duration-300"

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variant } from "framer-motion";
 import Image from "next/image";
@@ -18,36 +18,47 @@ import { content } from "@/data";
 const POSITIONS = ["left", "center", "right"] as const;
 type Position = (typeof POSITIONS)[number];
 
-const getResponsiveXTranslation = (position: 'left' | 'center' | 'right', screenWidth: number) => {
+const getResponsiveXTranslation = (
+  position: "left" | "center" | "right",
+  screenWidth: number
+) => {
   if (screenWidth < 640) {
-    return position === 'center' ? "0%" : 
-           position === 'left' ? "-110%" : 
-           "110%";
-  } 
+    return position === "center"
+      ? "0%"
+      : position === "left"
+      ? "-110%"
+      : "110%";
+  }
   if (screenWidth < 768) {
-    return position === 'center' ? "0%" : 
-           position === 'left' ? "-100%" : 
-           "100%";
+    return position === "center"
+      ? "0%"
+      : position === "left"
+      ? "-100%"
+      : "100%";
   }
   if (screenWidth < 1024) {
-    return position === 'center' ? "0%" : 
-           position === 'left' ? "-100%" : 
-           "100%";
+    return position === "center"
+      ? "0%"
+      : position === "left"
+      ? "-100%"
+      : "100%";
   }
   if (screenWidth < 1280) {
-    return position === 'center' ? "0%" : 
-           position === 'left' ? "-100%" : 
-           "100%";
+    return position === "center"
+      ? "0%"
+      : position === "left"
+      ? "-100%"
+      : "100%";
   }
   if (screenWidth < 3000) {
-    return position === 'center' ? "0%" : 
-           position === 'left' ? "-110%" : 
-           "110%";
+    return position === "center"
+      ? "0%"
+      : position === "left"
+      ? "-110%"
+      : "110%";
   }
 
-  return position === 'center' ? "0%" : 
-         position === 'left' ? "-100%" : 
-         "100%";
+  return position === "center" ? "0%" : position === "left" ? "-100%" : "100%";
 };
 
 const AboutHero = () => {
@@ -62,10 +73,10 @@ const AboutHero = () => {
       setScreenWidth(width);
       setIsMobile(width < 640);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -75,7 +86,7 @@ const AboutHero = () => {
       } else {
         handleNext();
       }
-    }, 3000);  // Reduced time for smoother feel
+    }, 3000); // Reduced time for smoother feel
     return () => clearInterval(interval);
   }, [isMobile, page]);
 
@@ -113,28 +124,28 @@ const AboutHero = () => {
       opacity: 1,
       transition: {
         x: { type: "spring", stiffness: 300, damping: 25 },
-        opacity: { duration: 0.2 }
-      }
+        opacity: { duration: 0.2 },
+      },
     },
     exit: (direction: number) => ({
       x: direction < 0 ? "100%" : "-100%",
       opacity: 0,
       transition: {
         x: { type: "spring", stiffness: 300, damping: 25 },
-        opacity: { duration: 0.2 }
-      }
-    })
+        opacity: { duration: 0.2 },
+      },
+    }),
   };
 
   const cards = [
     {
-      bg: "bg-orange-500",
-      title: content[0].title,
-      highlight: content[0].highlight,
-      group: Group1,
-      sticker: Sticker1,
-      star: Star1,
-      highlightColor: "text-light-green"
+      bg: "bg-green-300",
+      title: content[2].title,
+      highlight: content[2].highlight,
+      group: Group3,
+      sticker: Sticker3,
+      star: Star3,
+      highlightColor: "text-dark-green",
     },
     {
       bg: "bg-green-900",
@@ -143,43 +154,43 @@ const AboutHero = () => {
       group: Group2,
       sticker: Sticker2,
       star: Star2,
-      highlightColor: "text-light-green"
+      highlightColor: "text-light-green",
     },
     {
-      bg: "bg-green-300",
-      title: content[2].title,
-      highlight: content[2].highlight,
-      group: Group3,
-      sticker: Sticker3,
-      star: Star3,
-      highlightColor: "text-dark-green"
-    }
+      bg: "bg-orange-500",
+      title: content[0].title,
+      highlight: content[0].highlight,
+      group: Group1,
+      sticker: Sticker1,
+      star: Star1,
+      highlightColor: "text-light-green",
+    },
   ];
 
   const wrap = (index: number, length: number) => {
     return ((index % length) + length) % length;
   };
 
-  // This ensures the card always exists for any page number
+  
   const getCardContent = (pageIndex: number) => {
     return cards[wrap(pageIndex, cards.length)];
   };
 
   const cardVariants = {
-    center: { 
-      x: getResponsiveXTranslation('center', screenWidth),
+    center: {
+      x: getResponsiveXTranslation("center", screenWidth),
       scale: 1.05,
       zIndex: 5,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 300,
         damping: 30,
         mass: 0.8,
-        duration: 0.8
-      }
+        duration: 0.8,
+      },
     },
-    left: { 
-      x: getResponsiveXTranslation('left', screenWidth),
+    left: {
+      x: getResponsiveXTranslation("left", screenWidth),
       scale: 0.95,
       zIndex: 3,
       transition: {
@@ -187,11 +198,11 @@ const AboutHero = () => {
         stiffness: 300,
         damping: 30,
         mass: 0.8,
-        duration: 0.8
-      }
+        duration: 0.8,
+      },
     },
-    right: { 
-      x: getResponsiveXTranslation('right', screenWidth),
+    right: {
+      x: getResponsiveXTranslation("right", screenWidth),
       scale: 0.95,
       zIndex: 3,
       transition: {
@@ -199,9 +210,9 @@ const AboutHero = () => {
         stiffness: 300,
         damping: 30,
         mass: 0.8,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   return (
@@ -215,11 +226,7 @@ const AboutHero = () => {
 
       <div className="relative h-[450px] sm:h-[600px] w-full max-w-[1400px] mx-auto overflow-hidden mb-[6em] lg:mb-0">
         <div className="relative w-full h-full flex justify-center items-center">
-          <AnimatePresence 
-            initial={false} 
-            custom={direction}
-            mode="popLayout"
-          >
+          <AnimatePresence initial={false} custom={direction} mode="popLayout">
             {isMobile ? (
               <motion.div
                 key={page}
@@ -241,8 +248,10 @@ const AboutHero = () => {
                 }}
                 className="absolute inset-0 flex justify-center items-center px-4 "
               >
-                <div 
-                  className={`${cards[wrap(page, 3)].bg} rounded-2xl text-white p-4 lg:p-7
+                <div
+                  className={`${
+                    cards[wrap(page, 3)].bg
+                  } rounded-2xl text-white p-4 lg:p-7
                     w-full max-w-[380px] h-[450px] flex flex-col items-center justify-center relative `}
                 >
                   <div className="flex flex-col items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -280,18 +289,24 @@ const AboutHero = () => {
                 return (
                   <motion.div
                     key={index}
-                    className={`absolute ${card.bg} rounded-xl text-white p-4 lg:p-7
-                      ${currentPosition === "center"
-                        ? 'lg:w-[420px] h-[260px] sm:h-[320px] sm:w-[360px] lg:h-[440px] xl:w-[480px] xl:h-[500px]' 
-                        : 'lg:w-[380px] h-[260px] sm:w-[320px] lg:h-[410px]'}
+                    className={`absolute ${
+                      card.bg
+                    } rounded-xl text-white p-4 lg:p-7
+                      ${
+                        currentPosition === "center"
+                          ? "lg:w-[420px] h-[260px] sm:h-[320px] sm:w-[360px] lg:h-[440px] xl:w-[480px] xl:h-[500px]"
+                          : "lg:w-[380px] h-[260px] sm:w-[320px] lg:h-[410px]"
+                      }
                       flex flex-col gap-14 items-center`}
                     variants={cardVariants}
                     animate={currentPosition}
                     style={{ transformOrigin: "center" }}
                   >
                     <div className="flex flex-col items-center">
-                      <h1 className={`text-3xl lg:text-[3.25rem] font-medium lg:leading-[64px] 
-                        ${currentPosition === "center" ? 'max-w-[280px]' : ''}`}>
+                      <h1
+                        className={`text-3xl lg:text-[3.25rem] font-medium lg:leading-[64px] 
+                        ${currentPosition === "center" ? "max-w-[280px]" : ""}`}
+                      >
                         {card.title}{" "}
                         <span className={card.highlightColor}>
                           {card.highlight}
@@ -304,22 +319,24 @@ const AboutHero = () => {
                         src={card.group}
                         alt={`Group${index + 1}`}
                         className={`xl:w-auto lg:w-[140px] sm:w-24 
-                          ${currentPosition === "center" ? 'w-[180px]' : ''}`}
+                          ${currentPosition === "center" ? "w-[180px]" : ""}`}
                       />
                       <Image
                         src={card.sticker}
                         alt={`Sticker${index + 1}`}
                         className={`xl:w-[105px] lg:w-[100px] sm:w-20 
-                          ${currentPosition === "center" ? 'w-28' : ''}`}
+                          ${currentPosition === "center" ? "w-28" : ""}`}
                       />
                     </div>
                     <Image
                       alt={`Star${index + 1}`}
                       src={card.star}
                       className={`absolute right-1 lg:right-9 top-12 
-                        ${currentPosition === "center" 
-                          ? 'sm:top-16 lg:top-[160px]' 
-                          : 'lg:top-2'} 
+                        ${
+                          currentPosition === "center"
+                            ? "sm:top-16 lg:top-[160px]"
+                            : "lg:top-2"
+                        } 
                         animate-spin-slow`}
                     />
                   </motion.div>

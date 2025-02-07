@@ -69,7 +69,7 @@ export function Testimonial() {
                       width={100} // Adjust to custom width
                       height={30} // Adjust to custom height
                       className={`w-auto ${
-                        index === 1 ? "h-8" : index === 2 ? "h-7" : "h-10"
+                        index === 1 ? "h-8" : index === 2 ? "h-7" : "h-8"
                       }`}
                     />
                     <Image

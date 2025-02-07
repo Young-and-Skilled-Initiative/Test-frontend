@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="sm:p-[3em] text-white">
+    <div className="sm:p-[3em] text-white ">
       <div className="lg:px-[45px] px-6 py-12 sm:py-[94px] bg-dark-green w-full rounded-t-3xl sm:rounded-[20px]">
         <div className="flex flex-col gap-[125px] w-full">
           <div className="lg:flex justify-between gap-[6em] w-full h-full items-start ">
@@ -127,12 +127,12 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col gap-[84px] items-center">
-            <Image
+            {/* <Image
               src="/images/watermark.svg"
               alt="Watermark"
               width={1194}  // Specify appropriate width
               height={173}  // Specify appropriate height
-            />
+            /> */}
             <p className="text-base sm:text-xl font-normal text-gray-400">
               Copyright © 2024 Young & Skilled Initiative
             </p>

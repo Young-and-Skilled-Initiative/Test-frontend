@@ -11,26 +11,48 @@ import {
   YsiStar,
 } from "../../../public/images/ysiStory";
 
+interface FoundersProps {
+  pic: StaticImageData;
+  name: string;
+  tilt?: string;
+}
+
+const Founders: React.FC<FoundersProps> = ({ pic, name, tilt }) => {
+  return (
+    <div className="relative h-[500px] lg:h-[524px] w-[350px] lg:w-[400px]">
+      <Image src={pic} alt="Founders Image" />
+      <div
+        className={`absolute bottom-16 lg:bottom-6 left-[16px] lg:left-[18px] ${tilt} w-[320px] lg:w-[364px] py-5 h-[62px] lg:h-[79px] bg-[#F2A300] flex gap-3 lg:gap-5 rounded-[10px] items-center justify-between px-[17px]`}
+      >
+        <p className="font-[Cocon] font-medium text-[20px] text-center">
+          {name}
+        </p>
+        <p className="w-[124px] lg:w-[144px] text-white text-md lg:text-lg leading-[21px]">
+          Founder <span className="font-bold">YS initiative</span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const TheYsiStory = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <section className="bg-[#1A1A1A] pt-[4.8rem] pb-[5.5rem] px-[4rem] lg:px-[9rem] flex lg:gap-[3rem] xl:gap-[4.656rem] flex-wrap lg:flex-nowrap items-center justify-center">
+    <section className="bg-[#1A1A1A] pt-[4.8rem] pb-[5.5rem] px-[4rem] lg:px-[9rem] flex lg:gap-[3rem] xl:gap-[4.656rem] flex-wrap lg:flex-nowrap items-center justify-center overflow-hidden ">
       <section>
-        <figure className="relative h-[452px] lg:h-[520px] w-[360px] lg:w-[410px]">
-          <div className="absolute left-[10px]">
+        <div className="relative h-[452px] lg:h-[520px] w-[360px] lg:w-[410px]">
+          <div className="absolute ">
             <Founders pic={YsiPic1} name={"Ugorji Sunday Kalu"} />
           </div>
-          <div>
-            <Link href="https://www.instagram.com/fada_usk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-              <Image
-                src={YsiTapStar}
-                alt="tap star"
-                className="absolute z-20 left-[-2rem] bottom-[-3rem] lg:left-[-3.5rem] lg:bottom-[-3.5rem] xl:left-[-4rem] xl:bottom-[-4rem] w-28 lg:w-[146px] xl:w-[159.34px]"
-              />
-            </Link>
-          </div>
-        </figure>
+          <Link href="https://www.instagram.com/fada_usk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <Image
+              src={YsiTapStar}
+              alt="tap star"
+              className="absolute z-20  top-[-2.5em] left-[-1em] lg:left-[-3.5rem] lg:bottom-[-3.5rem] xl:left-[-4rem] xl:bottom-[-4rem] w-28 lg:w-[146px] xl:w-[159.34px]"
+            />
+          </Link>
+        </div>
       </section>
 
       <section className="mt-20 lg:mt-0">
@@ -84,30 +106,6 @@ const TheYsiStory = () => {
         </article>
       </section>
     </section>
-  );
-};
-
-interface FoundersProps {
-  pic: StaticImageData;
-  name: string;
-  tilt?: string;
-}
-
-const Founders: React.FC<FoundersProps> = ({ pic, name, tilt }) => {
-  return (
-    <div className="relative h-[500px] lg:h-[524px] w-[350px] lg:w-[400px]">
-      <Image src={pic} alt="Founders Image" />
-      <div
-        className={`absolute bottom-16 lg:bottom-6 left-[16px] lg:left-[18px] ${tilt} w-[320px] lg:w-[364px] py-5 h-[62px] lg:h-[79px] bg-[#F2A300] flex gap-3 lg:gap-5 rounded-[10px] items-center justify-between px-[17px]`}
-      >
-        <p className="font-[Cocon] font-medium text-[20px] text-center">
-          {name}
-        </p>
-        <p className="w-[124px] lg:w-[144px] text-white text-md lg:text-lg leading-[21px]">
-          Founder <span className="font-bold">YS initiative</span>
-        </p>
-      </div>
-    </div>
   );
 };
 
