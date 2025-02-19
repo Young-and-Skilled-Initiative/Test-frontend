@@ -39,10 +39,11 @@ const AboutUs = () => {
           </ul>
         </div>
         <div className="w-full sm:w-1/2 lg:w-full h-full relative  -top-10 sm:-top-0 flex">
+        
           <div className=" sm:z-20 w-full">
             <Image
               src={AboutBg}
-              className="h-40 w-52 sm:h-52 sm:w-60 lg:w-auto lg:h-auto left-4 md:left-9 lg:left-0 relative z-30 right-1 xl:w-auto xl:h-auto object-contain "
+              className="h-40 w-52 sm:h-52 sm:w-60 lg:w-auto lg:h-auto left-4 md:left-9 lg:left-0 2xl:left-[13.8rem]  relative z-30 right-1 xl:w-auto xl:h-auto object-contain "
               alt=""
             />
           </div>
@@ -80,7 +81,7 @@ const AboutUs = () => {
             Life Skills Development
           </h3>
 
-          <p className="text-base w-full font-400 leading-8 text-black/60 font-manrope tracking-wide lg:pr-[2.5em] xl:p-0">
+          <p className="text-base w-[80%] font-400 leading-8 text-black/60 font-manrope tracking-wide lg:pr-[2.5em] xl:p-0">
             Welcome to Young and Skilled Initiative, where we believe that every
             student has the potential to achieve greatness. Our mission is to
             provide high-quality learning experiences that equip young minds
